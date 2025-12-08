@@ -1,0 +1,207 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  background-color: #3B1D8F;
+  color: #fff;
+  overflow-x: hidden;
+}
+
+/* ===== HERO ===== */
+.hero {
+  position: relative;
+  height: 100vh;
+  background: linear-gradient(135deg, #3B1D8F, #5125AD, #8B51F5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  flex-direction: column;
+}
+
+.hero h1 {
+  font-size: 3.5rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+  max-width: 700px;
+  line-height: 1.5;
+}
+
+.logo {
+  height: 250px;
+  width: 300px;
+  
+
+}
+
+
+
+/* ===== BOTÕES ===== */
+.buttons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.btn {
+  display: inline-block;
+  text-decoration: none;
+  color: white;
+  padding: 12px 28px;
+  border-radius: 25px;
+  font-weight: 600;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
+}
+
+.btn.login {
+  background-color: #5125AD;
+  border-color: #8B51F5;
+}
+
+.btn.register {
+  background-color: #8B51F5;
+  border-color: #5125AD;
+}
+
+.btn:hover {
+  background-color: white;
+  color: #3B1D8F;
+  transform: scale(1.05);
+  cursor: pointer;
+}
+
+/* ===== SCROLL ===== */
+.scroll-down {
+  position: absolute;
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  animation: bounce 2s infinite;
+}
+
+.scroll-down span {
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  border-bottom: 3px solid white;
+  border-right: 3px solid white;
+  transform: rotate(45deg);
+  margin-bottom: 10px;
+}
+
+.scroll-down p {
+  font-size: 0.9rem;
+  opacity: 0.8;
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translate(-50%, 0); }
+  50% { transform: translate(-50%, 10px); }
+}
+
+/* ===== COMO FUNCIONA ===== */
+.como-funciona {
+  background-color: #f5f5f5;
+  color: #3B1D8F;
+  text-align: center;
+  padding: 100px 20px;
+}
+
+.como-funciona h2 {
+  font-size: 2.2rem;
+  margin-bottom: 60px;
+  font-weight: 700;
+}
+
+.steps {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 60px;
+}
+
+.step {
+  width: 250px;
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.step:hover {
+  transform: scale(1.08);
+}
+
+.icon {
+  font-size: 70px;
+  background: #3B1D8F;
+  color: white;
+  border-radius: 50%;
+  width: 130px;
+  height: 130px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 20px auto;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  transition: background 0.3s;
+}
+
+.icon:hover {
+  background: #5125AD;
+}
+
+.step h3 {
+  font-size: 1.1rem;
+  line-height: 1.4;
+}
+
+/* ===== SOBRE ===== */
+.sobre {
+  background-color: #fff;
+  color: #3B1D8F;
+  text-align: center;
+  padding: 80px 20px;
+}
+
+.sobre h2 {
+  font-size: 2rem;
+  margin-bottom: 15px;
+}
+
+.sobre p {
+  font-size: 1rem;
+  max-width: 700px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+/* ===== RESPONSIVO ===== */
+@media (max-width: 768px) {
+  .hero h1 {
+    font-size: 2.5rem;
+  }
+  .hero p {
+    font-size: 1rem;
+  }
+  .icon {
+    width: 100px;
+    height: 100px;
+    font-size: 55px;
+  }
+  .steps {
+    gap: 40px;
+  }
+}

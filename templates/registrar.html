@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Registrar - ReserveForClass</title>
+  <link rel="stylesheet" href="../static/css/registrar.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  
+  
+</head>
+<body>
+
+   <header class="topo-navegacao">
+  <button class="back-btn" onclick="history.back()">
+    <i class="fa-solid fa-arrow-left"></i>
+  </button>
+  </header>
+
+  <div class="container">
+    <div class="register-box">
+     
+      <h2>Crie sua conta</h2>
+      {% with msgs = get_flashed_messages(with_categories=true) %}
+        {% if msgs %}
+          <div>
+            {% for cat, msg in msgs %}
+              <p>{{ msg }}</p>
+            {% endfor %}
+          </div>
+        {% endif %}
+      {% endwith %}
+      <form id="registerForm" method="POST" action="/usuarios/registrar">
+        <div class="input-group">
+          <label for="nome">Nome Completo:</label>
+          <input type="text" id="nome" name="nome" placeholder="Digite seu nome completo" required>
+        </div>
+
+        <div class="input-group">
+          <label for="email">E-mail:</label>
+          <input type="email" id="email" name="email" placeholder="Digite seu e-mail" required>
+        </div>
+
+        <div class="input-group">
+          <label for="senha">Senha:</label>
+          <input type="password" id="senha" name="senha" placeholder="Crie uma senha" required>
+        </div>
+
+        <div class="input-group">
+          <label for="login">Nome de Usuário:</label>
+          <input type="text" id="login" name="login" placeholder="Digite um nome de usuário" required>
+        </div>
+        
+        <div class="input-group">
+          <label for="perfil">Perfil:</label>
+          <select id="perfil" name="perfil" required>
+            <option value="professor">Professor</option>
+            <option value="adm">Administrador</option>
+          </select>
+        </div>
+        
+
+        <button type="submit">Registrar</button>
+
+        <p class="login-text">
+          Já tem uma conta? <a href="/login">Login</a>
+        </p>
+      </form>
+    </div>
+  </div>
+</body>
+</html>
